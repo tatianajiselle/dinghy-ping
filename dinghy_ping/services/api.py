@@ -40,8 +40,9 @@ redis_host = os.getenv("REDIS_HOST", default="127.0.0.1")
 @api.route("/")
 def dinghy_html(req, resp):
     """Index route to Dinghy-ping input html form"""
+    print(os.getcwd())
     resp.content = api.template(
-        'index.html',
+        '../views/templates/index.html',
         get_all_pinged_urls=_get_all_pinged_urls()
     )
 
